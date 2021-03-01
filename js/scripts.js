@@ -55,5 +55,6 @@ for (;pokemonList[index];){
   if (pokemonHeight > 1.5){
     document.write(' - Wow that\'s big! ');
   }
+  document.write(pokemonType + '<br>');
   index++;
 }
