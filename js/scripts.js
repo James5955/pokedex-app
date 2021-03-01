@@ -3,7 +3,7 @@ let pokemonList = [{},{},{},{},{},{},{}];
 pokemonList[0] = {
     name: 'Bulbasaur',
     height: 0.7,
-    type: ['Grass', 'Poison']
+    type: ['Grass', ' Poison']
   };
 
 pokemonList[1] = {
@@ -21,19 +21,19 @@ pokemonList[2] = {
 pokemonList[3] = {
     name: 'Gastly',
     height: 1.3,
-    type: ['Ghost', 'Poison']
+    type: ['Ghost', ' Poison']
   };
 
 pokemonList[4] = {
     name: 'Haunter',
     height: 1.6,
-    type: ['Ghost', 'Poison']
+    type: ['Ghost', ' Poison']
   };
 
 pokemonList[5] = {
     name: 'Gengar',
     height: 1.5,
-    type: ['Ghost', 'Poison']
+    type: ['Ghost', ' Poison']
   };
 
 pokemonList[6] = {
@@ -45,10 +45,12 @@ pokemonList[6] = {
 let index = 0;
 let pokemonName = "";
 let pokemonHeight = 0;
+let pokemonType = "";
 
 for (;pokemonList[index];){
   pokemonName = pokemonList[index].name;
   pokemonHeight = pokemonList[index].height;
+  pokemonType = pokemonList[index].type;
   document.write(pokemonName + " (height: " + pokemonHeight + ") ");
   if (pokemonHeight > 1.5){
     document.write(' - Wow that\'s big! ');
