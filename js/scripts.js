@@ -1,4 +1,4 @@
-let pokemonList = [{},{},{},{},{},{},{}];
+let pokemonList = [];
 
 pokemonList[0] = {
     name: 'Bulbasaur',
