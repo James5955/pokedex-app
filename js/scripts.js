@@ -46,8 +46,7 @@ let index = 0;
 let pokemonName = "";
 
 for (;pokemonList[index];){
-  pokemonName = pokemonName + " " + pokemonList[index.name];
+  pokemonName = pokemonName + " " + pokemonList[index].name;
   index++;
 }
 document.write(pokemonName);
-document.write(pokemonList[0].name);
