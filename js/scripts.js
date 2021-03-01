@@ -50,5 +50,8 @@ for (;pokemonList[index];){
   pokemonName = pokemonList[index].name;
   pokemonHeight = pokemonList[index].height;
   document.write(pokemonName + " (height: " + pokemonHeight + ") ");
+  if (pokemonHeight > 1.5){
+    document.write(' - Wow that\'s big! ');
+  }
   index++;
 }
