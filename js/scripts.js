@@ -47,8 +47,8 @@ let pokemonName = "";
 let pokemonHeight = 0;
 
 for (;pokemonList[index];){
-  pokemonName = pokemonName + " " + pokemonList[index].name;
+  pokemonName = pokemonList[index].name;
   pokemonHeight = pokemonList[index].height;
+  document.write(pokemonName + " (height: " + pokemonHeight + ") ");
   index++;
 }
-document.write(pokemonName + ' (height: '' + pokemonHeight + ')');
