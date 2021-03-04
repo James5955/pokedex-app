@@ -58,3 +58,15 @@ for (;pokemonList[index];){
   document.write(pokemonType + '<br>');
   index++;
 }
+function printArrayDetails(list){
+  for( let i = 0; i < list.length; i++){
+    pokemonName = list[i].name;
+    pokemonHeight = list[i].height;
+    pokemonType = list[i].type;
+    document.write(pokemonName + " (height: " + pokemonHeight + ") ");
+    if (pokemonHeight > 1.5){
+      document.write(' - Wow that\'s big! ');
+    }
+    document.write(pokemonType + '<br>');
+  }
+}
