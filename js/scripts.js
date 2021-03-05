@@ -9,13 +9,13 @@ pokemonList[0] = {
 pokemonList[1] = {
     name: 'Charmander',
     height: 0.6,
-    type: 'Fire'
+    type: ['Fire']
   };
 
 pokemonList[2] = {
     name: 'Squirtle',
     height: 0.5,
-    type: 'Water'
+    type: ['Water']
   };
 
 pokemonList[3] = {
@@ -39,7 +39,7 @@ pokemonList[5] = {
 pokemonList[6] = {
     name: 'Pikachu',
     height: 0.4,
-    type: 'Electric'
+    type: ['Electric']
   };
 
 let index = 0;
