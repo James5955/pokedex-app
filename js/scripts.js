@@ -60,10 +60,11 @@ for (;pokemonList[index];){
 }
 
 function divide(dividend, divisor){
-  if (divisor == 0){
+  if (divisor === 0){
     return "You\'re trying to divide by zero.";
   }
   else{
-    return dividend / divisor;
+    let result = dividend / divisor;
+    return result;
   }
 }
