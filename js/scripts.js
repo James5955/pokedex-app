@@ -58,3 +58,12 @@ for (;pokemonList[index];){
   document.write(pokemonType + '<br>');
   index++;
 }
+
+function divide(dividend, divisor){
+  if (divisor == 0){
+    return "You\'re trying to divide by zero.";
+  }
+  else{
+    return dividend / divisor;
+  }
+}
