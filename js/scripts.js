@@ -58,6 +58,9 @@ for (;pokemonList[index];){
   document.write(pokemonType + '<br>');
   index++;
 }
+
+document.write('<br>' + 'Now this is the same list but passed through a function' + '<br><br>');
+
 function printArrayDetails(list){
   for( let i = 0; i < list.length; i++){
     pokemonName = list[i].name;
@@ -70,3 +73,5 @@ function printArrayDetails(list){
     document.write(pokemonType + '<br>');
   }
 }
+
+printArrayDetails(pokemonList);
