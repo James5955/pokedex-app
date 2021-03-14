@@ -78,17 +78,6 @@ function writePokemonDetails(pokemon){
   document.write('<br> <br>');
 }
 
-//for (;pokemonList[index];){
-//  pokemonName = pokemonList[index].name;
-//  pokemonHeight = pokemonList[index].height;
-//  pokemonType = pokemonList[index].type;
-//  document.write(pokemonName + " (height: " + pokemonHeight + ") ");
-//  if (pokemonHeight > 1.5){
-//    document.write(' - Wow that\'s big! ');
-//  }
-//  document.write(pokemonType + '<br>');
-//  index++;
-//}
 let globalPokemonList = pokemonRepository.getAll();
 
 globalPokemonList.forEach(writePokemonDetails);
