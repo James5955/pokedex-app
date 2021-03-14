@@ -44,8 +44,6 @@ let pokemonRepository = (function () {
       type: ['Electric']
     };
 
-
-
     function myPokemonDetailsLoop(pokemon){
       console.log('name: ' + pokemon.name);
       console.log('height: ' + pokemon.height);
@@ -53,16 +51,6 @@ let pokemonRepository = (function () {
     }
 
   pokemonList.forEach(myPokemonDetailsLoop);
-
-//  function add(pokemon){
-    //if (pokemon === []){
-  //  pokemonList.push(pokemon);
-  //}
-//  else{
-//    console.log('Pokemon that was attempted to be added was not an object')
-//    return;
-//  }
-//  }
 
 function add(pokemonName, pokemonHeight, pokemonType){
   pokemonList.push( { name: pokemonName, height: pokemonHeight, type: pokemonType});
