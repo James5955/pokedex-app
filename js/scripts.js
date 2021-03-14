@@ -1,6 +1,4 @@
-let pokemonRepository = [];
-
-(function () {
+let pokemonRepository = (function () {
   // This is my IIFE for pokemonList
   let pokemonList = [];
 
@@ -45,6 +43,8 @@ let pokemonRepository = [];
       height: 0.4,
       type: ['Electric']
     };
+
+
 
     function myPokemonDetailsLoop(pokemon){
       console.log('name: ' + pokemon.name);
