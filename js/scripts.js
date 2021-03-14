@@ -67,6 +67,15 @@ let pokemonRepository = (function () {
 function add(pokemonName, pokemonHeight, pokemonType){
   pokemonList.push( { name: pokemonName, height: pokemonHeight, type: pokemonType});
 }
+  // Bonus Task attempt
+  function add2(pokemon){
+    if( pokemon === 'object' && pokemon !== null)
+    pokemonList.push(pokemon);
+    else{
+      console.log('Pokemon that was attempted to be added was not an object')
+      return;
+    }
+  };
 
   function getAll(){
     return pokemonList;
@@ -74,12 +83,26 @@ function add(pokemonName, pokemonHeight, pokemonType){
 
   return{
     add: add,
+    add2: add2,
     getAll: getAll
   };
 })();
 
 console.log(pokemonRepository.getAll());
-pokemonRepository.add( { name: 'Charzard' , height: 2.0, type: ['Fire']});
+
+let Charzard = {
+  name: 'Charzard',
+  height: 2,
+  type: ['Fire']
+};
+
+// The working add function LoL
+pokemonRepository.add('Blastoise', 3, ['Water']);
+
+// Attempting to get Charzard to be recognized as an object  for bonus task
+pokemonRepository.add2(Charzard);
+// Making sure that Charzard has properties
+console.log(Charzard.name);
 
 function writePokemonDetails(pokemon){
   document.write('name: ' + pokemon.name + '<br>');
