@@ -96,7 +96,7 @@ let Charzard = {
   type: ['Fire']
 };
 
-// The working add function, but if I wanted to add 2 'types' how would I?
+// The working add function
 pokemonRepository.add('Magneton', 1, ['Electric', ' Steel']);
 
 // Attempting to get Charzard to be recognized as an object  for bonus task
