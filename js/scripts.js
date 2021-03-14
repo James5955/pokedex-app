@@ -68,6 +68,10 @@ let pokemonRepository = (function () {
   };
 })();
 
+console.log(pokemonRepository.getAll());
+pokemonRepository.add( { name: 'Charzard' , height: 2.0, type: ['Fire']});
+
+
 //for (;pokemonList[index];){
 //  pokemonName = pokemonList[index].name;
 //  pokemonHeight = pokemonList[index].height;
