@@ -1,3 +1,5 @@
+let pokemonRepository = [];
+
 (function () {
   // This is my IIFE for pokemonList
   let pokemonList = [];
@@ -51,7 +53,7 @@
     }
 
   pokemonList.forEach(myPokemonDetailsLoop);
-    
+
 })();
 
 //for (;pokemonList[index];){
