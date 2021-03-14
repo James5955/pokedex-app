@@ -46,12 +46,7 @@ pokemonList[6] = {
   console.log('name: ' + pokemon.name);
   console.log('height: ' + pokemon.height);
   console.log('type: ' + pokemon.type);
-  }
-
-let index = 0;
-let pokemonName = "";
-let pokemonHeight = 0;
-let pokemonType = "";
+};
 
 //for (;pokemonList[index];){
 //  pokemonName = pokemonList[index].name;
