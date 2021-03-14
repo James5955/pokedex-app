@@ -89,3 +89,6 @@ function writePokemonDetails(pokemon){
 //  document.write(pokemonType + '<br>');
 //  index++;
 //}
+let globalPokemonList = pokemonRepository.getAll();
+
+globalPokemonList.forEach(writePokemonDetails);
