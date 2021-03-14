@@ -42,46 +42,25 @@ pokemonList[6] = {
     type: ['Electric']
   };
 
+  pokemonList.forEach(function(pokemon){
+  console.log('name: ' + pokemon.name);
+  console.log('height: ' + pokemon.height);
+  console.log('type: ' + pokemon.type);
+  }
+
 let index = 0;
 let pokemonName = "";
 let pokemonHeight = 0;
 let pokemonType = "";
 
-for (;pokemonList[index];){
-  pokemonName = pokemonList[index].name;
-  pokemonHeight = pokemonList[index].height;
-  pokemonType = pokemonList[index].type;
-  document.write(pokemonName + " (height: " + pokemonHeight + ") ");
-  if (pokemonHeight > 1.5){
-    document.write(' - Wow that\'s big! ');
-  }
-  document.write(pokemonType + '<br>');
-  index++;
-}
-
-document.write('<br>' + 'Now this is the same list but passed through a function' + '<br><br>');
-
-function printArrayDetails(list){
-  for( let i = 0; i < list.length; i++){
-    pokemonName = list[i].name;
-    pokemonHeight = list[i].height;
-    pokemonType = list[i].type;
-    document.write(pokemonName + " (height: " + pokemonHeight + ") ");
-    if (pokemonHeight > 1.5){
-      document.write(' - Wow that\'s big! ');
-    }
-    document.write(pokemonType + '<br>');
-  }
-}
-
-printArrayDetails(pokemonList);
-
-function divide(dividend, divisor){
-  if (divisor === 0){
-    return "You\'re trying to divide by zero.";
-  }
-  else{
-    let result = dividend / divisor;
-    return result;
-  }
-}
+//for (;pokemonList[index];){
+//  pokemonName = pokemonList[index].name;
+//  pokemonHeight = pokemonList[index].height;
+//  pokemonType = pokemonList[index].type;
+//  document.write(pokemonName + " (height: " + pokemonHeight + ") ");
+//  if (pokemonHeight > 1.5){
+//    document.write(' - Wow that\'s big! ');
+//  }
+//  document.write(pokemonType + '<br>');
+//  index++;
+//}
