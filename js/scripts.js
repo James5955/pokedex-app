@@ -42,11 +42,13 @@ pokemonList[6] = {
     type: ['Electric']
   };
 
-  pokemonList.forEach(function(pokemon){
-  document.write('name: ' + pokemon.name);
-  document.write('height: ' + pokemon.height);
-  document.write('type: ' + pokemon.type);
-};
+  function myPokemonDetailsLoop(pokemon){
+    console.log('name: ' + pokemon.name);
+    console.log('height: ' + pokemon.height);
+    console.log('type: ' + pokemon.type);
+  }
+
+pokemonList.forEach(myPokemonDetailsLoop);
 
 //for (;pokemonList[index];){
 //  pokemonName = pokemonList[index].name;
