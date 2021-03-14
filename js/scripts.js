@@ -71,6 +71,12 @@ let pokemonRepository = (function () {
 console.log(pokemonRepository.getAll());
 pokemonRepository.add( { name: 'Charzard' , height: 2.0, type: ['Fire']});
 
+function writePokemonDetails(pokemon){
+  document.write('name: ' + pokemon.name + '<br>');
+  document.write('height: ' + pokemon.height + '<br>');
+  document.write('type: ' + pokemon.type + '<br>');
+  document.write('<br> <br>');
+}
 
 //for (;pokemonList[index];){
 //  pokemonName = pokemonList[index].name;
