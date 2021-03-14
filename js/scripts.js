@@ -54,6 +54,18 @@ let pokemonRepository = (function () {
 
   pokemonList.forEach(myPokemonDetailsLoop);
 
+  function add(pokemon){
+    pokemonList.push(pokemon);
+  }
+
+  function getAll(){
+    return pokemonList;
+  }
+
+  return{
+    add: add,
+    getAll: getAll
+  };
 })();
 
 //for (;pokemonList[index];){
