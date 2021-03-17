@@ -96,7 +96,7 @@ function writePokemonDetails(pokemon){
   let pokemonOrderList = document.querySelector('.pokemon-list');
   let listItem = document.createElement('li');
   let button = document.createElement('button');
-  button.innerText(pokemon.name);
+  button.innerText = pokemon.name;
   button.classList.add('pokemonButton');
   listItem.appendChild(button);
   pokemonOrderList.appendChild(button);
