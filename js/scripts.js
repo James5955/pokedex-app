@@ -93,10 +93,17 @@ pokemonRepository.add2(Charzard);
 console.log(Charzard.name);
 
 function writePokemonDetails(pokemon){
-  document.write('name: ' + pokemon.name + '<br>');
-  document.write('height: ' + pokemon.height + '<br>');
-  document.write('type: ' + pokemon.type + '<br>');
-  document.write('<br> <br>');
+  let pokemonOrderList = document.querySelector('.pokemon-list');
+  let listItem = document.createElement('li');
+  let button = document.createElement('button');
+  button.innerText(pokemon.name);
+  button.classList.add('pokemonButton');
+  listItem.appendChild(button);
+  pokemonOrderList.appendChild(button);
+  //document.write('name: ' + pokemon.name + '<br>');
+  //document.write('height: ' + pokemon.height + '<br>');
+  //document.write('type: ' + pokemon.type + '<br>');
+  //document.write('<br> <br>');
 }
 
 let globalPokemonList = pokemonRepository.getAll();
