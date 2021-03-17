@@ -100,10 +100,6 @@ function writePokemonDetails(pokemon){
   button.classList.add('pokemonButton');
   listItem.appendChild(button);
   pokemonOrderList.appendChild(button);
-  //document.write('name: ' + pokemon.name + '<br>');
-  //document.write('height: ' + pokemon.height + '<br>');
-  //document.write('type: ' + pokemon.type + '<br>');
-  //document.write('<br> <br>');
 }
 
 let globalPokemonList = pokemonRepository.getAll();
