@@ -68,7 +68,9 @@ function add(pokemonName, pokemonHeight, pokemonType){
     button.classList.add('pokemonButton');
     listItem.appendChild(button);
     pokemonOrderList.appendChild(listItem);
-    return;
+    button.addEventListener('click', function (event) {
+      showDetails(pokemon);
+    });
   }
 
   function showDetails(pokemon){
