@@ -67,7 +67,7 @@ function add(pokemonName, pokemonHeight, pokemonType){
     button.innerText = pokemon.name;
     button.classList.add('pokemonButton');
     listItem.appendChild(button);
-    pokemonOrderList.appendChild(button);
+    pokemonOrderList.appendChild(listItem);
     return;
   }
 
