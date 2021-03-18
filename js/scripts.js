@@ -71,10 +71,15 @@ function add(pokemonName, pokemonHeight, pokemonType){
     return;
   }
 
+  function showDetails(pokemon){
+    console.log(pokemon);
+  }
+
   return{
     add: add,
     getAll: getAll,
-    addListItem: addListItem
+    addListItem: addListItem,
+    showDetails: showDetails
   };
 })();
 
