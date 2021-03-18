@@ -55,15 +55,6 @@ let pokemonRepository = (function () {
 function add(pokemonName, pokemonHeight, pokemonType){
   pokemonList.push( { name: pokemonName, height: pokemonHeight, type: pokemonType});
 }
-  // Bonus Task attempt
-  function add2(pokemon){
-    if( pokemon === 'object' && pokemon !== null)
-    pokemonList.push(pokemon);
-    else{
-      console.log('Pokemon that was attempted to be added was not an object')
-      return;
-    }
-  };
 
   function getAll(){
     return pokemonList;
@@ -82,7 +73,6 @@ function add(pokemonName, pokemonHeight, pokemonType){
 
   return{
     add: add,
-    add2: add2,
     getAll: getAll,
     addListItem: addListItem
   };
@@ -90,19 +80,7 @@ function add(pokemonName, pokemonHeight, pokemonType){
 
 console.log(pokemonRepository.getAll());
 
-let Charzard = {
-  name: 'Charzard',
-  height: 2,
-  type: ['Fire']
-};
-
-// The working add function
 pokemonRepository.add('Magneton', 1, ['Electric', ' Steel']);
-
-// Attempting to get Charzard to be recognized as an object  for bonus task
-pokemonRepository.add2(Charzard);
-// Making sure that Charzard has properties
-console.log(Charzard.name);
 
 let globalPokemonList = pokemonRepository.getAll();
 
