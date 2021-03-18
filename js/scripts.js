@@ -69,10 +69,22 @@ function add(pokemonName, pokemonHeight, pokemonType){
     return pokemonList;
   }
 
+  function addListItem(pokemon){
+    let pokemonOrderList = document.querySelector('.pokemon-list');
+    let listItem = document.createElement('li');
+    let button = document.createElement('button');
+    button.innerText = pokemon.name;
+    button.classList.add('pokemonButton');
+    listItem.appendChild(button);
+    pokemonOrderList.appendChild(button);
+    return;
+  }
+
   return{
     add: add,
     add2: add2,
-    getAll: getAll
+    getAll: getAll,
+    addListItem: addListItem
   };
 })();
 
@@ -92,16 +104,6 @@ pokemonRepository.add2(Charzard);
 // Making sure that Charzard has properties
 console.log(Charzard.name);
 
-function writePokemonDetails(pokemon){
-  let pokemonOrderList = document.querySelector('.pokemon-list');
-  let listItem = document.createElement('li');
-  let button = document.createElement('button');
-  button.innerText = pokemon.name;
-  button.classList.add('pokemonButton');
-  listItem.appendChild(button);
-  pokemonOrderList.appendChild(button);
-}
-
 let globalPokemonList = pokemonRepository.getAll();
 
-globalPokemonList.forEach(writePokemonDetails);
+globalPokemonList.forEach(pokemonRepository.addListItem);
