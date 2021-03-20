@@ -49,11 +49,6 @@ function getAll(){
   return pokemonList;
 }
 
-function showDetails(pokemon) {
-  loadDetails(pokemon).then(function () {
-    console.log(pokemon);
-  });
-
 function addListItem(pokemon){
   let pokemonOrderList = document.querySelector('.pokemon-list');
   let listItem = document.createElement('li');
@@ -67,6 +62,10 @@ function addListItem(pokemon){
   });
 }
 
+function showDetails(pokemon) {
+  loadDetails(pokemon).then(function () {
+    console.log(pokemon);
+  });
 }
 
 return{
