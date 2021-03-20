@@ -63,8 +63,12 @@ return{
 
 console.log(pokemonRepository.getAll());
 
-pokemonRepository.add('Magneton', 1, ['Electric', ' Steel']);
+//let globalPokemonList = pokemonRepository.getAll();
 
-let globalPokemonList = pokemonRepository.getAll();
+//globalPokemonList.forEach(pokemonRepository.addListItem);
 
-globalPokemonList.forEach(pokemonRepository.addListItem);
+pokemonRepository.loadList().then(function() {
+  pokemonRepository.getAll().forEach(function(pokemon){
+    pokemonRepository.addListItem(pokemon);
+  });
+});
