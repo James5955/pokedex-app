@@ -62,8 +62,10 @@ function addListItem(pokemon){
   });
 }
 
-function showDetails(pokemon){
-  console.log(pokemon);
+function showDetails(pokemon) {
+  loadDetails(pokemon).then(function () {
+    console.log(pokemon);
+  });
 }
 
 return{
