@@ -33,14 +33,6 @@ function loadList() {
     });
   }
 
-  function myPokemonDetailsLoop(pokemon){
-    console.log('name: ' + pokemon.name);
-    console.log('height: ' + pokemon.height);
-    console.log('type: ' + pokemon.type);
-  }
-
-pokemonList.forEach(myPokemonDetailsLoop);
-
 function add(pokemonName, pokemonHeight, pokemonType){
 pokemonList.push( { name: pokemonName, height: pokemonHeight, type: pokemonType});
 }
