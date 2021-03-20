@@ -80,10 +80,6 @@ return{
 
 console.log(pokemonRepository.getAll());
 
-let globalPokemonList = pokemonRepository.getAll();
-
-globalPokemonList.forEach(pokemonRepository.addListItem);
-
 pokemonRepository.loadList().then(function() {
   pokemonRepository.getAll().forEach(function(pokemon){
     pokemonRepository.addListItem(pokemon);
