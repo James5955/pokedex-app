@@ -1,6 +1,23 @@
 let pokemonRepository = (function () {
 // This is my IIFE for pokemonList
 let pokemonList = [];
+let apiUrl = 'https://pokeapi.co/api/v2/pokemon/?limit=150';
+
+function loadList() {
+    return fetch(apiUrl).then(function (response) {
+      return response.json();
+    }).then(function (json) {
+      json.results.forEach(function (item) {
+        let pokemon = {
+          name: item.name,
+          detailsUrl: item.url
+        };
+        add(pokemon);
+      });
+    }).catch(function (e) {
+      console.error(e);
+    })
+  }
 
   function myPokemonDetailsLoop(pokemon){
     console.log('name: ' + pokemon.name);
@@ -39,7 +56,8 @@ return{
   add: add,
   getAll: getAll,
   addListItem: addListItem,
-  showDetails: showDetails
+  showDetails: showDetails,
+  loadList: loadList
 };
 })();
 
