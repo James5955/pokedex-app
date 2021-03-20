@@ -27,7 +27,7 @@ function loadList() {
       // Now we add the details to the item
       item.imageUrl = details.sprites.front_default;
       item.height = details.height;
-      item.types = details.types;
+      item.type = details.types;
     }).catch(function (e) {
       console.error(e);
     });
@@ -42,7 +42,7 @@ function loadList() {
 pokemonList.forEach(myPokemonDetailsLoop);
 
 function add(pokemonName, pokemonHeight, pokemonType){
-pokemonList.push( { name: pokemonName, height: pokemonHeight, type: pokemonType});
+pokemonList.push( { name: pokemonName, height: pokemonHeight, type: pokemonType, imageUrl: pokemonImageURL});
 }
 
 function getAll(){
