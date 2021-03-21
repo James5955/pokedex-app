@@ -101,6 +101,24 @@ pokemonRepository.loadList().then(function() {
     return validateEmail() && validatePassword();
   }
 
+  function showErrorMessage(input, message){
+    let container = input.parentElement; // The .input-wrapper
+
+    // Remove an existing error
+    let error = container.querySelector('.error-message');
+    if (error){
+      container.removeChild(error);
+    }
+
+    // Now add the error if the message isn't empty
+    if (message){
+      let error = document.createElement('div');
+      error.classList.add('error-message');
+      error.innerText = message;
+      container.appendChild(error);
+    }
+  }
+
   form.addEventListener('submit', (e)){
     e.preventDefault(); // Do not Submit to server
     if (validationForm()){
