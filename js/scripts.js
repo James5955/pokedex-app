@@ -33,8 +33,8 @@ function loadList() {
     });
   }
 
-function add(pokemonName, pokemonHeight, pokemonType){
-pokemonList.push( { name: pokemonName, height: pokemonHeight, type: pokemonType});
+function add(pokemon){
+pokemonList.push(pokemon);
 }
 
 function getAll(){
