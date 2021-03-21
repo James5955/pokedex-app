@@ -77,3 +77,28 @@ pokemonRepository.loadList().then(function() {
     pokemonRepository.addListItem(pokemon);
   });
 });
+
+(function (){
+  let form = document.querySelector('#register-form');
+  let emailInput = document.querySelector('#email');
+  let passwordInput = document.querySelector('#password');
+
+  function validateEmail(){
+    return false;
+  }
+
+  function validatePassword(){
+    return false;
+  }
+
+  function validateForm(){
+    return validateEmail() && validatePassword();
+  }
+
+  form.addEventListener('submit', (e)){
+    e.preventDefault(); // Do not Submit to server
+    if (validationForm()){
+      alert('Sucess!');
+    }
+  }
+})(); // () for execute immediately!
