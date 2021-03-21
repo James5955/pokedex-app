@@ -93,7 +93,8 @@ pokemonRepository.loadList().then(function() {
   }
 
   function validatePassword(){
-    return false;
+    let value = passwordInput.value;
+    return value && value.length >= 8;
   }
 
   function validateForm(){
