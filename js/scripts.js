@@ -78,7 +78,9 @@ pokemonRepository.loadList().then(function() {
   });
 });
 
-(function (){
+// Register form validation!
+
+/*(function (){
   let form = document.querySelector('#register-form');
   let emailInput = document.querySelector('#email');
   let passwordInput = document.querySelector('#password');
@@ -101,4 +103,4 @@ pokemonRepository.loadList().then(function() {
       alert('Sucess!');
     }
   }
-})(); // () for execute immediately!
+})(); // () for execute immediately! */
