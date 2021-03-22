@@ -78,7 +78,10 @@ pokemonRepository.loadList().then(function() {
   });
 });
 
-// Register form validation!
+// Creating a modal!
+
+
+/* // Register form validation!
 
 (function (){
   let form = document.querySelector('#register-form');
