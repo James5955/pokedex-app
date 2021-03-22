@@ -81,11 +81,36 @@ pokemonRepository.loadList().then(function() {
 // Creating a modal!
 function showModal(title, text){
   let modalContainer = document.querySelector('#modal-container');
-  modalContainer.classList.add('is-visible');
+
+  // Clear all existing modal content
+  modalContainer.innerHTML = '';
+
+  let modal = document.createElement('div');
+  modal.classList.add('modal');
+
+  // Add the new modal content
+  let closeButtonElement = document.createElement('button');
+  closeButtonElement.classList.add('modal-close');
+  closeButtonElement.innerText = 'Close';
+
+  let titleElement = document.createElement('h1');
+  titleElement.innerText = title;
+
+  let contentElement = document.createElement('p');
+  contentElement.innerText = text;
+
+  // append close button, title, and content to modal, then modal to modal container
+  modal.appendChild(closeButtonElement);
+  modal.appendChild(titleElement);
+  modal.appendChild(contentElement);
+  modalContainer.appendChild(modal);
+
+  modalContainer.classList.add('is-visible')
 }
+
 // Adds listener to wait for a click on "show modal" before executing showModal()
 document.querySelector('#show-modal').addEventListener('click', () => {
-  showModal();
+  showModal('Modal title', 'This is the modal content!');
 });
 
 /* // Register form validation!
