@@ -92,6 +92,7 @@ function showModal(title, text){
   let closeButtonElement = document.createElement('button');
   closeButtonElement.classList.add('modal-close');
   closeButtonElement.innerText = 'Close';
+  closeButtonElement.addEventListener('click', hideModal);
 
   let titleElement = document.createElement('h1');
   titleElement.innerText = title;
@@ -108,6 +109,14 @@ function showModal(title, text){
   modalContainer.classList.add('is-visible')
 }
 
+// close modal with ESC key, only if its visible
+window.addEventListener('keydown', (e) => {
+  let modalContainer = document.querySelector('#modal-container');
+  if (e.key === 'Escape' && modalContainer.classList.contains('is-visible')){
+    hideModal();
+  }
+});
+
 // Adds listener to wait for a click on "show modal" before executing showModal()
 document.querySelector('#show-modal').addEventListener('click', () => {
   showModal('Modal title', 'This is the modal content!');
@@ -117,6 +126,13 @@ function hideModal(){
   let modalContainer = document.querySelector('#modal-container');
   modalContainer.classList.remove('is-visible');
 }
+
+window.addEventListener('keydown', (e) => {
+  let modalContainer = document.querySelector('#modal-container');
+  if (e.key === 'Escape' && modalContainer.classList.contains('is-visible')) {
+    hideModal();
+  }
+});
 
 /* // Register form validation!
 
