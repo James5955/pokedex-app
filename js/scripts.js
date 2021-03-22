@@ -121,7 +121,9 @@ pokemonRepository.loadList().then(function() {
   }
 
   function validateForm(){
-    return validateEmail() && validatePassword();
+    let isValidEmail = validateEmail();
+    let isValidPassword = validatePassword();
+    return isValidEmail && isValidPassword;
   }
 
   function showErrorMessage(input, message){
