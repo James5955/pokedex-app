@@ -20,6 +20,12 @@ html, body{
 }
 
 #modal-container{
+  /* hides the modal by default */
+  display: none;
+}
+
+/* when modal IS visible, give it these properties */
+#modal-container.is-visible{
   position: fixed;
   padding: 20px;
   box-sizing: border-box;
@@ -35,8 +41,8 @@ html, body{
   /* to allow scrolling if the screen is not high enough */
   overflow: auto;
 
-  /* this is used to center the modal */
-  display: grid;
+    /* this is used to center the modal */
+  display: block;
   text-align: center;
 }
 
