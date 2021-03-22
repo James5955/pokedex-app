@@ -144,13 +144,14 @@ pokemonRepository.loadList().then(function() {
     }
   }
 
-  emailInput.addEventListener('submit', validateEmail);
-  passwordInput.addEventListener('submit', validatePassword);
-
+  // When form is submitted, don't send data to server and validate form, if validation is strue, alert success
   form.addEventListener('submit', (e)){
     e.preventDefault(); // Do not Submit to server
     if (validationForm()){
       alert('Sucess!');
+
+  emailInput.addEventListener('submit', validateEmail);
+  passwordInput.addEventListener('submit', validatePassword);
     }
   }
 })(); // () for execute immediately! */
