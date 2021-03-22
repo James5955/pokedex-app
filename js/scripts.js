@@ -209,5 +209,5 @@ window.addEventListener('keydown', (e) => {
   emailInput.addEventListener('submit', validateEmail);
   passwordInput.addEventListener('submit', validatePassword);
     }
-  }
-})(); // () for execute immediately! */
+  } */
+})(); // () for execute immediately!
