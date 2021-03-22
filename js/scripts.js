@@ -83,7 +83,7 @@ function showModal(title, text){
   let modalContainer = document.querySelector('#modal-container');
   modalContainer.classList.add('is-visible');
 }
-
+// Adds listener to wait for a click on "show modal" before executing showModal()
 document.querySelector('#show-modal').addEventListener('click', () => {
   showModal();
 });
