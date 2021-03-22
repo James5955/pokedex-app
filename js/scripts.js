@@ -105,7 +105,19 @@ pokemonRepository.loadList().then(function() {
 
   function validatePassword(){
     let value = passwordInput.value;
-    return value && value.length >= 8;
+    // If password field is empty, return string and return false
+    if (!value){
+      showErrorMessage(passwordInput, 'Password is a required field.');
+      return false;
+    }
+    // If password is less than 8 characters long, return string, return false
+    if (value.length < 8){
+      showErrorMessage(passwordInput, 'The password needs to be at least 8 characters long');
+      return false;
+    }
+    // Else.. erase existing error and don't pass string of error since string is null
+    showErrorMessage(passwordInput, null);
+    return true;
   }
 
   function validateForm(){
