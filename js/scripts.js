@@ -144,6 +144,9 @@ pokemonRepository.loadList().then(function() {
     }
   }
 
+  emailInput.addEventListener('submit', validateEmail);
+  passwordInput.addEventListener('submit', validatePassword);
+
   form.addEventListener('submit', (e)){
     e.preventDefault(); // Do not Submit to server
     if (validationForm()){
