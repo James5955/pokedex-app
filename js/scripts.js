@@ -87,9 +87,20 @@ pokemonRepository.loadList().then(function() {
 
   function validateEmail(){
     let value = emailInput.value;
-    let hasAtSign = value.indexOf('@') > -1;
-    let hasDot = value.indexOf('.') > -1;
-    return value && hasAtSign && hasDot;
+
+    // If input is empty, return string then return false
+    if (!value){
+      showErrorMessage(emailInput, 'Email is a required field.');
+      return false;
+    }
+    // If input value doesn't have an index w/ @ sign, return string and return false
+    if (value.indexOf('@') === -1){
+      showErrorMessage(emailInput, 'You must enter a valid email address.');
+      return false;
+    }
+    // Else.. erase existing error, and don't pass string of error since string is null
+    showErrorMessage(emailInput, null);
+    return true;
   }
 
   function validatePassword(){
