@@ -79,6 +79,8 @@ pokemonRepository.loadList().then(function() {
 });
 
 // Creating a modal!
+let modalContainer = document.querySelector('#modal-container');
+
 function showModal(title, text){
   let modalContainer = document.querySelector('#modal-container');
 
@@ -134,7 +136,6 @@ window.addEventListener('keydown', (e) => {
   }
 });
 
-let modalContainer = document.querySelector('#modal-container');
 modalContainer.addEventListener('click', (e) => {
   // Since this is also triggered when clicking INSIDE the modal
   // We only want to close if the user clicks directly on the overlay
