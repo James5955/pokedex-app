@@ -79,7 +79,14 @@ pokemonRepository.loadList().then(function() {
 });
 
 // Creating a modal!
+function showModal(title, text){
+  let modalContainer = document.querySelector('#modal-container');
+  modalContainer.classList.add('is-visible');
+}
 
+document.querySelector('#show-modal').addEventListener('click', () => {
+  showModal();
+});
 
 /* // Register form validation!
 
