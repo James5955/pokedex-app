@@ -57,7 +57,6 @@ let pokemonRepository = (function () {
 
   function showDetails(pokemon) {
     loadDetails(pokemon).then(function () {
-      showModal(pokemon.name, pokemon.height);
     });
   }
 
@@ -75,10 +74,10 @@ let pokemonRepository = (function () {
     // closeButton.addEventListener('click', hideModal);
 
     let pokemonName = document.createElement('h1');
-    pokemonName = name;
+    pokemonName.innerText = name;
 
     let pokemonHeight = document.createElement('p');
-    pokemonHeight = height;
+    pokemonHeight.innerText = height;
 
     // Add X, name, height to pokemonModal
     pokemonModal.appendChild(closeButton);
