@@ -57,12 +57,12 @@ let pokemonRepository = (function () {
 
   function showDetails(pokemon) {
     loadDetails(pokemon).then(function () {
-      showModal(pokemon.name, pokemon.height);
+      showModal(pokemon);
     });
   }
 
   // Try passing in a pokemon, then access attributes inside showModal??
-  function showModal(name, height){
+  function showModal(pokemon){
     // Create modal and make it visible
     let pokemonModal = document.createElement('div');
     pokemonModal.classList.add('modal');
@@ -76,10 +76,10 @@ let pokemonRepository = (function () {
     closeButton.addEventListener('click', hideModal);
 
     let pokemonName = document.createElement('h1');
-    pokemonName.innerText = name;
+    pokemonName.innerText = pokemon.name;
 
     let pokemonHeight = document.createElement('p');
-    pokemonHeight.innerText = height;
+    pokemonHeight.innerText = pokemon.height;
 
     // Add X, name, height to pokemonModal
     pokemonModal.appendChild(closeButton);
