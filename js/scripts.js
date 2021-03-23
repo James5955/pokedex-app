@@ -1,9 +1,9 @@
 let pokemonRepository = (function () {
-// This is my IIFE for pokemonList
-let pokemonList = [];
-let apiUrl = 'https://pokeapi.co/api/v2/pokemon/?limit=150';
+  // This is my IIFE for pokemonList
+  let pokemonList = [];
+  let apiUrl = 'https://pokeapi.co/api/v2/pokemon/?limit=150';
 
-function loadList() {
+  function loadList() {
     return fetch(apiUrl).then(function (response) {
       return response.json();
     }).then(function (json) {
@@ -33,45 +33,45 @@ function loadList() {
     });
   }
 
-function add(pokemon){
-pokemonList.push(pokemon);
-}
+  function add(pokemon){
+    pokemonList.push(pokemon);
+  }
 
-function getAll(){
-  return pokemonList;
-}
+  function getAll(){
+    return pokemonList;
+  }
 
-function addListItem(pokemon){
-  let pokemonOrderList = document.querySelector('.pokemon-list');
-  let listItem = document.createElement('li');
-  let button = document.createElement('button');
-  button.innerText = pokemon.name;
-  button.classList.add('pokemonButton');
-  listItem.appendChild(button);
-  pokemonOrderList.appendChild(listItem);
-  button.addEventListener('click', function (event) {
-    showDetails(pokemon);
-  });
-}
+  function addListItem(pokemon){
+    let pokemonOrderList = document.querySelector('.pokemon-list');
+    let listItem = document.createElement('li');
+    let button = document.createElement('button');
+    button.innerText = pokemon.name;
+    button.classList.add('pokemonButton');
+    listItem.appendChild(button);
+    pokemonOrderList.appendChild(listItem);
+    button.addEventListener('click', function (event) {
+      showDetails(pokemon);
+    });
+  }
 
-function showDetails(pokemon) {
-  loadDetails(pokemon).then(function () {
-    //showModal(pokemon.name, pokemon.height);
-  });
-}
+  function showDetails(pokemon) {
+    loadDetails(pokemon).then(function () {
+      //showModal(pokemon.name, pokemon.height);
+    });
+  }
 
-function showModal(pokemonName, pokemonHeight){
-  
-}
+  function showModal(pokemonName, pokemonHeight){
 
-return{
-  add: add,
-  getAll: getAll,
-  addListItem: addListItem,
-  showDetails: showDetails,
-  loadList: loadList,
-  loadDetails: loadDetails
-};
+  }
+
+  return{
+    add: add,
+    getAll: getAll,
+    addListItem: addListItem,
+    showDetails: showDetails,
+    loadList: loadList,
+    loadDetails: loadDetails
+  };
 })();
 
 console.log(pokemonRepository.getAll());
