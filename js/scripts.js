@@ -2,7 +2,7 @@ let pokemonRepository = (function () {
   // This is my IIFE for pokemonList
   let pokemonList = [];
   let apiUrl = 'https://pokeapi.co/api/v2/pokemon/?limit=150';
-  let modalContainer = document.querySelector('#modal-cotainer');
+  let modalContainer = document.querySelector('#modal-container');
 
   function loadList() {
     return fetch(apiUrl).then(function (response) {
@@ -57,9 +57,11 @@ let pokemonRepository = (function () {
 
   function showDetails(pokemon) {
     loadDetails(pokemon).then(function () {
+      showModal(pokemon.name, pokemon.height);
     });
   }
 
+  // Try passing in a pokemon, then access attributes inside showModal??
   function showModal(name, height){
     // Create modal and make it visible
     let pokemonModal = document.createElement('div');
@@ -71,7 +73,7 @@ let pokemonRepository = (function () {
     let closeButton = document.createElement('button');
     closeButton.classList.add('modal-x');
     closeButton.innerText = 'X';
-    // closeButton.addEventListener('click', hideModal);
+    closeButton.addEventListener('click', hideModal);
 
     let pokemonName = document.createElement('h1');
     pokemonName.innerText = name;
