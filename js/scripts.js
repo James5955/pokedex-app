@@ -65,6 +65,22 @@ let pokemonRepository = (function () {
     pokemonModal.classList.add('modal');
     // Clear all existing pokemonModal content
     pokemonModal.innertext = '';
+
+    let closeButton = document.createElement('button');
+    closeButton.classList.add('modal-x');
+    closeButton.innerText = 'X';
+    // closeButton.addEventListener('click', hideModal);
+
+    let pokemonName = document.createElement('h1');
+    pokemonName = name;
+
+    let pokemonHeight = document.createElement('p');
+    pokemonHeight = height;
+
+    pokemonModal.appendChild(closeButton);
+    pokemonModal.appendChild(pokemonName);
+    pokemonModal.appendChild(pokemonHeight);
+
   }
 
   return{
