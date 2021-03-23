@@ -2,6 +2,7 @@ let pokemonRepository = (function () {
 // This is my IIFE for pokemonList
 let pokemonList = [];
 let apiUrl = 'https://pokeapi.co/api/v2/pokemon/?limit=150';
+let modalContainer = document.querySelector('#modal-container');
 
 function loadList() {
     return fetch(apiUrl).then(function (response) {
@@ -78,9 +79,8 @@ pokemonRepository.loadList().then(function() {
   });
 });
 
-// Creating a modal!
-let modalContainer = document.querySelector('#modal-container');
 
+/*
 function showModal(title, text){
   let modalContainer = document.querySelector('#modal-container');
 
@@ -144,7 +144,7 @@ modalContainer.addEventListener('click', (e) => {
     hideModal();
   }
 });
-
+*/
 
 /* // Register form validation!
 
