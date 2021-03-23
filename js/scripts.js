@@ -57,7 +57,6 @@ let pokemonRepository = (function () {
 
   function showDetails(pokemon) {
     loadDetails(pokemon).then(function () {
-    showModal(pokemon.name, pokemon.height);
     });
   }
 
@@ -78,11 +77,20 @@ let pokemonRepository = (function () {
     let pokemonHeight = document.createElement('p');
     pokemonHeight = height;
 
+    // Add X, name, height to pokemonModal
     pokemonModal.appendChild(closeButton);
     pokemonModal.appendChild(pokemonName);
     pokemonModal.appendChild(pokemonHeight);
+    // Add pokemonModal to the larger modal that contains it
+    modalContainer.appendChild(pokemonModal);
 
+    // Make modalContainer visible
+    modalContainer.classList.add('is-visible');
   }
+
+  function hideModal() {
+  modalContainer.classList.remove('is-visible');
+}
 
   return{
     add: add,
@@ -90,7 +98,9 @@ let pokemonRepository = (function () {
     addListItem: addListItem,
     showDetails: showDetails,
     loadList: loadList,
-    loadDetails: loadDetails
+    loadDetails: loadDetails,
+    showModal: showModal,
+    hideModal: hideModal
   };
 })();
 
