@@ -60,8 +60,11 @@ let pokemonRepository = (function () {
     });
   }
 
-  function showModal(pokemonName, pokemonHeight){
-    
+  function showModal(name, height){
+    let pokemonModal = document.createElement('div');
+    pokemonModal.classList.add('modal');
+    // Clear all existing pokemonModal content
+    pokemonModal.innertext = '';
   }
 
   return{
