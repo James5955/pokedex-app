@@ -61,26 +61,6 @@ function showDetails(pokemon) {
   });
 }
 
-return{
-  add: add,
-  getAll: getAll,
-  addListItem: addListItem,
-  showDetails: showDetails,
-  loadList: loadList,
-  loadDetails: loadDetails
-};
-})();
-
-console.log(pokemonRepository.getAll());
-
-pokemonRepository.loadList().then(function() {
-  pokemonRepository.getAll().forEach(function(pokemon){
-    pokemonRepository.addListItem(pokemon);
-  });
-});
-
-
-/*
 function showModal(title, text){
   let modalContainer = document.querySelector('#modal-container');
 
@@ -144,7 +124,29 @@ modalContainer.addEventListener('click', (e) => {
     hideModal();
   }
 });
-*/
+
+return{
+  add: add,
+  getAll: getAll,
+  addListItem: addListItem,
+  showDetails: showDetails,
+  loadList: loadList,
+  loadDetails: loadDetails,
+  hideModal: hideModal,
+  showModal: showModal
+};
+})();
+
+console.log(pokemonRepository.getAll());
+
+pokemonRepository.loadList().then(function() {
+  pokemonRepository.getAll().forEach(function(pokemon){
+    pokemonRepository.addListItem(pokemon);
+  });
+});
+
+
+
 
 /* // Register form validation!
 
