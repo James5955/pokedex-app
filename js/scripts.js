@@ -57,7 +57,6 @@ let pokemonRepository = (function () {
 
   function showDetails(pokemon) {
     loadDetails(pokemon).then(function () {
-      //showModal(pokemon.name, pokemon.height);
     showModal(pokemon.name, pokemon.height);
     });
   }
