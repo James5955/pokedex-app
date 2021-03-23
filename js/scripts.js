@@ -2,7 +2,6 @@ let pokemonRepository = (function () {
 // This is my IIFE for pokemonList
 let pokemonList = [];
 let apiUrl = 'https://pokeapi.co/api/v2/pokemon/?limit=150';
-let modalContainer = document.querySelector('#modal-container');
 
 function loadList() {
     return fetch(apiUrl).then(function (response) {
@@ -57,73 +56,13 @@ function addListItem(pokemon){
 
 function showDetails(pokemon) {
   loadDetails(pokemon).then(function () {
-    console.log(pokemon);
+    //showModal(pokemon.name, pokemon.height);
   });
 }
 
-function showModal(title, text){
-  let modalContainer = document.querySelector('#modal-container');
-
-  // Clear all existing modal content
-  modalContainer.innerHTML = '';
-
-  let modal = document.createElement('div');
-  modal.classList.add('modal');
-
-  // Add the new modal content
-  let closeButtonElement = document.createElement('button');
-  closeButtonElement.classList.add('modal-close');
-  closeButtonElement.innerText = 'Close';
-  closeButtonElement.addEventListener('click', hideModal);
-
-  let titleElement = document.createElement('h1');
-  titleElement.innerText = title;
-
-  let contentElement = document.createElement('p');
-  contentElement.innerText = text;
-
-  // append close button, title, and content to modal, then modal to modal container
-  modal.appendChild(closeButtonElement);
-  modal.appendChild(titleElement);
-  modal.appendChild(contentElement);
-  modalContainer.appendChild(modal);
-
-  modalContainer.classList.add('is-visible')
+function showModal(pokemonName, pokemonHeight){
+  
 }
-
-// close modal with ESC key, only if its visible
-window.addEventListener('keydown', (e) => {
-  let modalContainer = document.querySelector('#modal-container');
-  if (e.key === 'Escape' && modalContainer.classList.contains('is-visible')){
-    hideModal();
-  }
-});
-
-// Adds listener to wait for a click on "show modal" before executing showModal()
-document.querySelector('#show-modal').addEventListener('click', () => {
-  showModal('Modal title', 'This is the modal content!');
-});
-
-function hideModal(){
-  let modalContainer = document.querySelector('#modal-container');
-  modalContainer.classList.remove('is-visible');
-}
-
-window.addEventListener('keydown', (e) => {
-  let modalContainer = document.querySelector('#modal-container');
-  if (e.key === 'Escape' && modalContainer.classList.contains('is-visible')) {
-    hideModal();
-  }
-});
-
-modalContainer.addEventListener('click', (e) => {
-  // Since this is also triggered when clicking INSIDE the modal
-  // We only want to close if the user clicks directly on the overlay
-  let target = e.target;
-  if (target === modalContainer) {
-    hideModal();
-  }
-});
 
 return{
   add: add,
@@ -131,9 +70,7 @@ return{
   addListItem: addListItem,
   showDetails: showDetails,
   loadList: loadList,
-  loadDetails: loadDetails,
-  hideModal: hideModal,
-  showModal: showModal
+  loadDetails: loadDetails
 };
 })();
 
@@ -144,84 +81,3 @@ pokemonRepository.loadList().then(function() {
     pokemonRepository.addListItem(pokemon);
   });
 });
-
-
-
-
-/* // Register form validation!
-
-(function (){
-  let form = document.querySelector('#register-form');
-  let emailInput = document.querySelector('#email');
-  let passwordInput = document.querySelector('#password');
-
-  function validateEmail(){
-    let value = emailInput.value;
-
-    // If input is empty, return string then return false
-    if (!value){
-      showErrorMessage(emailInput, 'Email is a required field.');
-      return false;
-    }
-    // If input value doesn't have an index w/ @ sign, return string and return false
-    if (value.indexOf('@') === -1){
-      showErrorMessage(emailInput, 'You must enter a valid email address.');
-      return false;
-    }
-    // Else.. erase existing error, and don't pass string of error since string is null
-    showErrorMessage(emailInput, null);
-    return true;
-  }
-
-  function validatePassword(){
-    let value = passwordInput.value;
-    // If password field is empty, return string and return false
-    if (!value){
-      showErrorMessage(passwordInput, 'Password is a required field.');
-      return false;
-    }
-    // If password is less than 8 characters long, return string, return false
-    if (value.length < 8){
-      showErrorMessage(passwordInput, 'The password needs to be at least 8 characters long');
-      return false;
-    }
-    // Else.. erase existing error and don't pass string of error since string is null
-    showErrorMessage(passwordInput, null);
-    return true;
-  }
-
-  function validateForm(){
-    let isValidEmail = validateEmail();
-    let isValidPassword = validatePassword();
-    return isValidEmail && isValidPassword;
-  }
-
-  function showErrorMessage(input, message){
-    let container = input.parentElement; // The .input-wrapper
-
-    // Remove an existing error
-    let error = container.querySelector('.error-message');
-    if (error){
-      container.removeChild(error);
-    }
-
-    // Now add the error if the message isn't empty
-    if (message){
-      let error = document.createElement('div');
-      error.classList.add('error-message');
-      error.innerText = message;
-      container.appendChild(error);
-    }
-  }
-
-  // When form is submitted, don't send data to server and validate form, if validation is strue, alert success
-  form.addEventListener('submit', (e)){
-    e.preventDefault(); // Do not Submit to server
-    if (validationForm()){
-      alert('Sucess!');
-
-  emailInput.addEventListener('submit', validateEmail);
-  passwordInput.addEventListener('submit', validatePassword);
-    }
-  } */
-})(); // () for execute immediately!
