@@ -57,12 +57,15 @@ let pokemonRepository = (function () {
 
   function showDetails(pokemon) {
     loadDetails(pokemon).then(function () {
+      showModal(pokemon.name, pokemon.height);
     });
   }
 
   function showModal(name, height){
+    // Create modal and make it visible
     let pokemonModal = document.createElement('div');
     pokemonModal.classList.add('modal');
+    pokemonModal.classList.add('is-visible');
     // Clear all existing pokemonModal content
     pokemonModal.innertext = '';
 
