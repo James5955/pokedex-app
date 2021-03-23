@@ -2,6 +2,7 @@ let pokemonRepository = (function () {
   // This is my IIFE for pokemonList
   let pokemonList = [];
   let apiUrl = 'https://pokeapi.co/api/v2/pokemon/?limit=150';
+  let modalContainer = document.querySelector('#modal-cotainer');
 
   function loadList() {
     return fetch(apiUrl).then(function (response) {
