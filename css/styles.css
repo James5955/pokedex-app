@@ -67,3 +67,8 @@ html, body{
 .modal p {
   margin-bottom: 0;
 }
+
+.pokemonImage{
+  width = 20%;
+  max-width: 300px;
+}
