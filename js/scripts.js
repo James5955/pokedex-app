@@ -86,9 +86,9 @@ let pokemonRepository = (function () {
     pokemonImg.src = pokemon.imageUrl;
 
     // Add X, name, height to pokemonModal
-    pokemonModal.appendChild(closeButton);
-    pokemonModal.appendChild(pokemonName);
-    pokemonModal.appendChild(pokemonHeight);
+    pokemonModal.append(closeButton);
+    pokemonModal.append(pokemonName);
+    pokemonModal.append(pokemonHeight);
     pokemonModal.append(pokemonImg);
     // Add pokemonModal to the larger modal that contains it
     modalContainer.appendChild(pokemonModal);
