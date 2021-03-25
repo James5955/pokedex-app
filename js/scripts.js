@@ -81,15 +81,15 @@ let pokemonRepository = (function () {
     let pokemonHeight = document.createElement('p');
     pokemonHeight.innerText = 'height: ' + pokemon.height;
 
-    let pokemonImg = document.createElement('div');
-    pokemonIMG.classList.add('pokemonImage');
-    pokemonIMG = pokemon.imageUrl;
+    let pokemonImg = document.createElement('img');
+    pokemonImg.classList.add('pokemonImage');
+    pokemonImg.src = pokemon.imageUrl;
 
     // Add X, name, height to pokemonModal
     pokemonModal.appendChild(closeButton);
     pokemonModal.appendChild(pokemonName);
     pokemonModal.appendChild(pokemonHeight);
-    pokemonModal.appendChild(pokemonIMG);
+    pokemonModal.append(pokemonImg);
     // Add pokemonModal to the larger modal that contains it
     modalContainer.appendChild(pokemonModal);
 
