@@ -99,6 +99,7 @@ let pokemonRepository = (function () {
 
   function hideModal() {
   modalContainer.classList.remove('is-visible');
+  modalContainer.removeChild(modalContainer.firstChild);
 }
 
 window.addEventListener('keydown', (e) => {
