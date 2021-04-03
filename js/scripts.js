@@ -66,7 +66,25 @@ let pokemonRepository = (function () {
 
   // Try passing in a pokemon, then access attributes inside showModal??
   function showModal(pokemon){
+    let modalBody = $(".modal-body");
+    let modalTitle = $(".modal-title");
+    let modalHeader = $(".modal.header");
 
+    modalTitle.empty();
+    modalBody.empty();
+
+    let pokemonName = $("<h1>" + pokemon.name + "</h1>");
+    let image = $('<img class="modal-img" style="width:50%">');
+    image.attr("src", pokemon.imageUrl);
+    let height = $("<p>" + "height : " + pokemon.height + "</p>");
+    let weight = $("<p>" + "weight : " + pokemon.weight + "</p>");
+    let types = $("<p>" + "types : " + pokemon.types + "</p>");
+
+    modalTitle.append(pokemonName);
+    modalBody.append(image);
+    modalBody.append(height);
+    modalBody.append(weight);
+    modalBody.append(types);
   }
 
   function hideModal() {
