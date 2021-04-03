@@ -35,7 +35,7 @@ let pokemonRepository = (function () {
   }
 
   function add(pokemon){
-    pokemon.classList.add('group-list-item');
+    //pokemon.classList.add('group-list-item');
     pokemonList.push(pokemon);
   }
 
