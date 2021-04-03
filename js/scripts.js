@@ -66,12 +66,12 @@ let pokemonRepository = (function () {
 
   // Try passing in a pokemon, then access attributes inside showModal??
   function showModal(pokemon){
+
   }
 
   function hideModal() {
-  modalContainer.classList.remove('is-visible');
-  modalContainer.removeChild(modalContainer.firstChild);
-}
+
+  }
 
 window.addEventListener('keydown', (e) => {
   if( e.key === 'Escape' && modalContainer.classList.contains('is-visible')){
