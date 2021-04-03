@@ -66,39 +66,6 @@ let pokemonRepository = (function () {
 
   // Try passing in a pokemon, then access attributes inside showModal??
   function showModal(pokemon){
-    // Create modal and make it visible
-    let pokemonModal = document.createElement('div');
-    pokemonModal.classList.add('modal');
-    pokemonModal.classList.add('is-visible');
-    // Clear all existing pokemonModal content
-    pokemonModal.innertext = '';
-
-    let closeButton = document.createElement('button');
-    closeButton.classList.add('modal-x');
-    closeButton.innerText = 'X';
-    closeButton.addEventListener('click', hideModal);
-    closeButton.classList.add('btn-outline-dark');
-
-    let pokemonName = document.createElement('h1');
-    pokemonName.innerText = pokemon.name;
-
-    let pokemonHeight = document.createElement('p');
-    pokemonHeight.innerText = 'height: ' + pokemon.height;
-
-    let pokemonImg = document.createElement('img');
-    pokemonImg.classList.add('pokemonImage');
-    pokemonImg.src = pokemon.imageUrl;
-
-    // Add X, name, height to pokemonModal
-    pokemonModal.append(closeButton);
-    pokemonModal.append(pokemonName);
-    pokemonModal.append(pokemonHeight);
-    pokemonModal.append(pokemonImg);
-    // Add pokemonModal to the larger modal that contains it
-    modalContainer.appendChild(pokemonModal);
-
-    // Make modalContainer visible
-    modalContainer.classList.add('is-visible');
   }
 
   function hideModal() {
